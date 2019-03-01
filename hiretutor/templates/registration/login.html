@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}<br>
+<div class="d-flex justify-content-center align-items-center container">
+    <div class="card" style="width: 25rem;">
+        <h5 class="card-header" style="font-family: 'Fredericka the Great', cursive;">Hire Your Tutor</h5>
+        <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Baloo Bhaijaan', cursive;">Login</h5>
+            <form method="post" novalidate style="font-family: 'Baloo Bhaijaan', cursive;" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                {{ form.username|as_crispy_field }}
+                {{ form.password|as_crispy_field }}
+                <button type="submit" class="btn btn-primary" style="font-family: 'Baloo Bhaijaan', cursive;">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+{% endblock title %}
+{% block content %}
+<div class="pb-2 mt-4 mb-2 border-bottom">
+    <h3 class="display-3">Guardian's Profile Page </h3>
+    <h5>
+        <small>Your username is
+            <mark>{{user.username}}</mark>
+            . Please fill in your profile for <b>tutors</b> to see!
+        </small>
+    </h5>
+</div>
+<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <h3>Guardian's Personal Information</h3>
+    <div class="row">
+        <div class="col-sm-4">
+            {{form.Guardians_name|as_crispy_field}}
+        </div>
+        <div class="col-sm-4">
+            {{form.nid_No|as_crispy_field}}
+        </div>
+        <div class="col-sm-4">
+            {{form.occupation|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Student's Information</h3>
+        </div>
+        <div class="col-sm-6">
+            <h3>Tutor's FAQ</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            {{form.students_name|as_crispy_field}}
+            {{form.gender|as_crispy_field}}
+            {{form.s_class|as_crispy_field}}
+            {{form.school|as_crispy_field}}
+			 {{form.subject|as_crispy_field}}
+        </div>
+        <div class="col-sm-6">
+            {{form.payment|as_crispy_field}}
+            {{form.address|as_crispy_field}}
+            {{form.tution_hour|as_crispy_field}}
+            {{form.guardian_contact|as_crispy_field}}
+            {{form.need_tutor_from|as_crispy_field}}
+            {{form.description|as_crispy_field}}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+{% endblock content %}
+

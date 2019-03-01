@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+Hire Tutor
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="myimage">
+        <h1 class="display-4" style="font-family: 'Fredericka the Great', cursive;">Hire Your Tutor</h1>
+        <p class="lead" style="font-family: 'Baloo Bhaijaan', cursive;">You can get a tutor from this notice board as per requirements of yours. We don't
+            charge guardian or tutors here it is just a place where guardian finds a tutor to contact and a tutor gets a
+            student. Hire your tutor from here it's completely FREE!
+        </p>
+        <p class="lead" style="font-family: 'Baloo Bhaijaan', cursive;">
+            <a href="{% url 'guardian_signup' %}" class="btn btn-lg btn-secondary">Hire Tutor</a>
+            <a href="{% url 'tutor_signup' %}" class="btn btn-lg btn-secondary">Become a tutor</a>
+        </p>
+        <p class="lead" style="font-family: 'Baloo Bhaijaan', cursive;">
+            Already a member here? Please Login! <br>
+            <a href="{% url 'login' %}" class="btn btn-lg btn-secondary">Login</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}<br>
+<div class="row">
+    <div class="d-flex justify-content-center align-items-center container">
+        <h2 style="font-family: 'Baloo Bhaijaan', cursive;">Sign up as a {{ user_type }}</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="d-flex justify-content-center align-items-center container">
+        <form method="post" novalidate enctype="multipart/form-data" style="font-family: 'Baloo Bhaijaan', cursive;">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success" style="font-family: 'Baloo Bhaijaan', cursive;">Sign up</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

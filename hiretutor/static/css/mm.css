@@ -1,0 +1,13 @@
+.myimage{
+	background-image: url(/static/img/ny.png);
+	height: 100vh;
+	background-size: cover;
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-position: center;
+	text-align: center;
+}
+

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+{% block content %}<br>
+<h1 style="font-family: 'Baloo Bhaijaan', cursive;">Guardian homepage</h1><br>
+<div class="row">
+    <div class="col-sm-12">{% for TutorProfiles in tutors %}
+        <div class="card card-inverse" style="background-color: #F8F9FA; border-color: #E0A800;">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-sm-4">
+                        {% if TutorProfiles.image %}
+                        <img src="{{TutorProfiles.image.url}}"
+                             alt="nothing to show" class="img-thumbnail rounded float-left">
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-8" style="font-family: 'Source Code Pro', monospace; font-size:15px;"><br>
+                        <h5 class="card-title text-muted"><i class="fas fa-chalkboard-teacher"></i>
+                            {{TutorProfiles.Your_Full_Name|safe}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{TutorProfiles.address|safe}}
+                            <ion-icon name="pin"></ion-icon>
+                            <br>{{TutorProfiles.age|safe}} years old, {{TutorProfiles.gender|safe}} <br> Nid No.
+                            {{TutorProfiles.nid_No|safe}} <br>Contact: {{TutorProfiles.phone_number|safe}}<br><br> <i
+                                    class="fas fa-book"></i> Subjects: <b>{{TutorProfiles.subjects_you_teach|safe}}</b>
+                            <br><i class="fas fa-calendar-week"></i> Available for: {{TutorProfiles.week|safe}} days in a week <br>
+                            <i class="far fa-clock"></i> {{TutorProfiles.tution_hour|safe}} Hours
+                            <i class="far fa-money-bill-alt"></i> {{TutorProfiles.fees_per_subject|safe}} Tk per subject <br><br>
+                            <p><b>Objectives</b> of
+                                <mark>{{TutorProfiles.Your_Full_Name|safe}}</mark>
+                                : <br>&nbsp&nbsp&nbsp&nbsp&nbsp{{TutorProfiles.description|safe}}<hr>
+                            </p>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>{% endfor %}
+    </div>
+</div>
+{% endblock content %}
